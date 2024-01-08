@@ -99,7 +99,7 @@
   display: block;
   height: 1px;
   background-color: currentColor;
-  transition: all 0.3s;
+  transition: inline-size 0.3s;
   inline-size: 0%;
 }
 
@@ -238,7 +238,7 @@
   color: var(--color-button);
   font-size: 14px;
   line-height: 0.9;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
   cursor: pointer;
   min-block-size: 38px;
   inline-size: 130px;
@@ -255,7 +255,7 @@
   z-index: 1;
   height: 100%;
   background-color: var(--color-button);
-  transition: all 0.3s ease-in-out;
+  transition: inline-size 0.3s ease-in-out;
   inline-size: 0%;
   mix-blend-mode: difference;
 }
@@ -356,7 +356,7 @@
 
   .is-liked .contour,
   .is-liked .main-body,
-  .is-liked .core  {
+  .is-liked .core {
     fill: red;
   }
 
@@ -385,7 +385,7 @@
   font-size: 14px;
   line-height: 0.9;
   background-color: var(--background-color);
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
   inline-size: 335px;
   block-size: 51px;
 }
@@ -397,7 +397,7 @@
 .button-save:focus-visible {
   box-shadow: 2px 2px 0 0 currentColor;
   outline: none;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .floppy-icon {
