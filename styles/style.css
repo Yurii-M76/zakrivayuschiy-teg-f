@@ -132,15 +132,14 @@
   cursor: pointer;
 }
 
-.main {
+/* cards */
+.cards__list {
   display: flex;
   flex-direction: column;
   gap: 50px;
-  background-color: var(--background-color);
 }
 
-/* cards */
-.cards {
+.cards__list-item {
   border: 2px solid var(--accent-color);
   background-color: var(--background-color);
 }
@@ -178,6 +177,7 @@
   top: 25px;
   right: 25px;
   z-index: 1;
+  opacity: 0.5;
   color: var(--accent-color);
   font-family: var(--font-family-accent), 'Arial', sans-serif;
   font-size: 14px;
@@ -186,14 +186,14 @@
 
 .stroke {
   text-shadow:
-    -1px 0 var(--text-stroke-color), 
-    0 1px var(--text-stroke-color), 
-    1px 0 var(--text-stroke-color), 
-    0 -1px var(--text-stroke-color);
+  -1px 0 var(--text-stroke-color),
+  0 1px var(--text-stroke-color),
+  1px 0 var(--text-stroke-color),
+  0 -1px var(--text-stroke-color),;
 }
 
-@supports((text-stroke: 1px var(--text-stroke-color)) or 
-  (-webkit-text-stroke: 1px var(--text-stroke-color))) {
+@supports((text-stroke: 1px var(--text-stroke-color))
+  or (-webkit-text-stroke: 1px var(--text-stroke-color))) {
   .stroke {
       text-shadow: none;
       -webkit-text-stroke: 1px var(--text-stroke-color);
@@ -210,7 +210,7 @@
   display: flex;
   flex-direction: column;
   gap: 27px;
-  margin: 25px 29px 25px 25px;
+  margin: 25px;
   font-weight: var(--font-weight-text);
   line-height: 1.16;
 }
@@ -275,43 +275,32 @@
   outline: none;
 }
 
-.card__like-button:focus-visible .heart-icon {
-  outline: 2px solid #000;
+.card__like-button:focus-visible .like-icon {
+  outline: 2px solid var(--accent-color);
+  outline-offset: -1px;
 }
 
   /* heart */
-  .heart {
-    fill: none;
-  }
-
-  .like-icon {
-    fill: none;
+  .heart,
+  .like-icon,
+  .main-body,
+  .core,
+  .sparks {
+    fill: transparent;
   }
 
   .contour {
     fill: var(--accent-color);
   }
 
-  .main-body {
-    fill: none;
-  }
-
-  .core {
-    fill: none;
-  }
-
-  .sparks {
-    fill: none;
-  }
-
   .like-icon .core {
     fill: transparent;
-    transition: fill 0.3s;
+    transition: fill 0.3s 0.03s;
   }
 
   .like-icon:hover .core {
-    fill: #000;
-    transition: fill 0.3s 0.03s;
+    fill: var(--accent-color);
+    transition: fill 0.3s;
   }
 
   .like-icon:active .core {
@@ -321,12 +310,12 @@
 
   .like-icon .main-body {
     fill: transparent;
-    transition: fill 0.3s;
+    transition: fill 0.3s 0.05s;
   }
 
   .like-icon:hover .main-body {
-    fill: #000;
-    transition: fill 0.3s 0.05s;
+    fill: var(--accent-color);
+    transition: fill 0.3s;
   }
 
   .like-icon:active .main-body {
@@ -502,6 +491,10 @@
   .watermark {
     top: 23px;
     right: 11px;
+  }
+
+  .card__text {
+    margin: 25px 29px 25px 25px;
   }
 
   .button-save {
