@@ -25,7 +25,7 @@
   background-attachment: fixed;
   min-inline-size: 375px;
   min-block-size: 100dvb;
-  font-variation-settings: var(--font-weight-text);
+  font-variation-settings: "wght" var(--font-weight-text);
 }
 
 .width-block {
@@ -40,12 +40,12 @@
   align-items: center;
   margin-block-start: 104px;
   margin-block-end: 100px;
-  border: 2px solid var(--accent-color, #000);
-  color: var(--accent-color, #000);
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
   font-family: var(--font-family-accent), Arial, sans-serif;
   font-size: 14px;
   text-transform: uppercase;
-  background-color: var(--background-color, #FFF);
+  background-color: var(--background-color);
   min-block-size: 323px;
 }
 
@@ -157,8 +157,8 @@
   align-items: center;
   margin: 5px 10px;
   margin-inline: 10px;
-  font-weight: var(--font-weight-title);
   font-size: inherit;
+  font-variation-settings: "wght" var(--font-weight-title);
   block-size: fit-content;
 }
 
@@ -169,7 +169,7 @@
   border-bottom: 2px solid var(--accent-color);
   overflow: hidden;
   font-size: 0;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .watermark {
@@ -410,7 +410,7 @@
 .dialog {
   border: 2px solid var(--accent-color);
   padding: 0;
-  background-color: var(--background-color, #FFF);
+  background-color: var(--background-color);
   inline-size: 357px;
   min-block-size: 193px;
 }
