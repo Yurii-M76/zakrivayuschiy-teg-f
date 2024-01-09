@@ -59,6 +59,12 @@
 
 .logo__title {
   font-size: clamp(49px, 1.921rem + 4.923vw, 65px);
+  text-decoration: none;
+}
+
+.logo__title:focus,
+.logo__title:focus-visible {
+  outline: none;
 }
 
 .logo__text {
@@ -212,7 +218,7 @@
   line-height: 1.16;
 }
 
-.card__like-button {
+.card__buttons {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -221,7 +227,7 @@
   margin-block-end: 25px;
 }
 
-.button__text {
+.card__like-button {
   position: relative;
   z-index: 0;
   display: flex;
@@ -242,7 +248,7 @@
   mix-blend-mode: difference;
 }
 
-.button__text::before,
+.card__like-button::before,
 .button-save::before,
 .dialog__button::before {
   content: '';
@@ -257,22 +263,23 @@
   mix-blend-mode: difference;
 }
 
-.button__text:hover::before,
+.card__like-button:hover::before,
 .button-save:hover::before,
 .dialog__button:hover::before {
   inline-size: 100%;
 }
 
+.card__icon-button:focus,
 .card__like-button:focus {
   outline: none;
 }
 
-.card__like-button:focus-visible .button__text {
+.card__like-button:focus-visible {
   box-shadow: 2px 2px 0 0 currentColor;
   outline: none;
 }
 
-.card__like-button:focus-visible .like-icon {
+.card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: -1px;
 }
@@ -374,6 +381,7 @@
   transition: box-shadow 0.3s ease;
   inline-size: 335px;
   block-size: 51px;
+  margin: 50px auto 102px;
 }
 
 .button-save:focus {
