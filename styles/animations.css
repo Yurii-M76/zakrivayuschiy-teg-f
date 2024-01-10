@@ -46,10 +46,92 @@
 @keyframes sparks {
   0% {
     opacity: 0;
-    fill: transparent;
   }
   100% {
     opacity: 1;
-    fill: red;
   }
+}
+
+/* Прозрачность искр */
+.sparks {
+  opacity: 0;
+}
+
+/* Цвет сердцевины */
+.like-icon .core {
+  fill: transparent;
+  /* Возврат в исходное состояние с задержкой */
+  transition: fill 0.3s linear 0.03s;
+}
+
+/* Цвет тела */
+.like-icon .main-body {
+  fill: transparent;
+  /* Возврат в исходное состояние без задержки */
+  transition: fill 0.3s linear;
+}
+
+/* Цвет сердцевины при наведении */
+.like-icon:hover .core {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear;
+}
+
+/* Цвет тела при наведении */
+.like-icon:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+/* Окрашиваем сердцевину при зажатии */
+.like-icon:active .core {
+  fill: var(--fill-like-icon);
+  transition: fill 0.3s linear;
+}
+
+/* Окрашиваем тело при зажатии */
+.like-icon:active .main-body {
+  fill: var(--fill-like-icon);
+  transition: fill 0.3s linear;
+}
+
+/* Окрашиваем контур при зажатии с задержкой*/
+.like-icon:active .contour {
+  fill: var(--fill-like-icon);
+  transition: fill 0.3s linear 0.06s;
+}
+
+/* Анимация масштабирования группы элементов с задержкой */
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: scale 0.3s ease-in 0.1s;
+}
+
+/* Анимация прозрачности искр с задержкой */
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s;
+}
+
+/* Окрашиваем контур при клике */
+.like-icon.is-liked .core {
+  fill: var(--fill-like-icon);
+  transition: fill 0.3s linear;
+}
+
+/* Окрашиваем тело при клике */
+.like-icon.is-liked .main-body {
+  fill: var(--fill-like-icon);
+  transition: fill 0.3s linear;
+}
+
+/* Окрашиваем контур с задержкой при клике */
+.like-icon.is-liked .contour {
+  fill: var(--fill-like-icon);
+  transition: fill 0.3s linear 0.06s;
+}
+
+/* Перекрашиваем контур обратно (после снятия лайка) */
+.like-icon .contour { 
+  fill: var(--accent-color);
+  transition: fill 0.1s linear;
 }
